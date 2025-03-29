@@ -9,15 +9,13 @@ import org.axonframework.spring.stereotype.Aggregate;
 @Aggregate
 public class Bike {
 
-  @AggregateIdentifier
-  private String bikeId;
+  @AggregateIdentifier private String bikeId;
 
   private boolean isAvailable;
   private String reservedBy;
   private boolean reservationConfirmed;
 
-  public Bike() {
-  }
+  public Bike() {}
 
   @CommandHandler
   public Bike(RegisterBikeCommand command) {
@@ -29,6 +27,4 @@ public class Bike {
     this.bikeId = event.bikeId();
     this.isAvailable = true;
   }
-
-
 }
