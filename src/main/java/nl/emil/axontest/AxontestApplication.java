@@ -14,6 +14,8 @@ public class AxontestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AxontestApplication.class, args);
 	}
+
+
 	@Qualifier("messageSerializer")
 	@Bean
 	public Serializer messageSerializer(ObjectMapper mapper) {
@@ -23,7 +25,8 @@ public class AxontestApplication {
 				.objectMapper(mapper)
 				.lenientDeserialization()
 				.build();
+		//https://github.com/AxonFramework/AxonFramework/issues/1418#issuecomment-1328792446
 	}
-	//https://github.com/AxonFramework/AxonFramework/issues/1418#issuecomment-1328792446
+
 
 }
